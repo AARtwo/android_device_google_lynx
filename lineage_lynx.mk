@@ -6,6 +6,7 @@
 
 # Inherit some common Lineage stuff.
 TARGET_DISABLE_EPPE := true
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -18,9 +19,12 @@ PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 7a
 PRODUCT_NAME := lineage_lynx
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+# Crdroid Extra Stuffs
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_IS_PIXEL := true
+TARGET_HAS_UDFPS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+EXTRA_UDFPS_ANIMATIONS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=lynx \
