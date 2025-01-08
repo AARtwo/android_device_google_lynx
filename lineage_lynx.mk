@@ -6,9 +6,11 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
+@@ -18,9 +19,12 @@ PRODUCT_BRAND := google
 DEVICE_CODENAME := lynx
 DEVICE_PATH := device/google/lynx
 VENDOR_PATH := vendor/google/lynx
@@ -21,13 +23,23 @@ PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 7a
 PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+# Crdroid Extra Stuffs
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_IS_PIXEL := true
+TARGET_HAS_UDFPS := true
+TARGET_BOOT_ANIMATION_RES := 1080
+EXTRA_UDFPS_ANIMATIONS := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="lynx-user 15 AP4A.241205.013 12621605 release-keys" \
     BuildFingerprint=google/lynx/lynx:15/AP4A.241205.013/12621605:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME)
+
+# F-Droid
+PRODUCT_PACKAGES += \
+    F-DroidPrivilegedExtension
+# BCR
+PRODUCT_PACKAGES += \
+    BCR
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
