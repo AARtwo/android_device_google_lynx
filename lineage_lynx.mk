@@ -10,7 +10,6 @@ DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
-@@ -18,9 +19,12 @@ PRODUCT_BRAND := google
 DEVICE_CODENAME := lynx
 DEVICE_PATH := device/google/lynx
 VENDOR_PATH := vendor/google/lynx
