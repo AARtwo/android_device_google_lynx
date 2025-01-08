@@ -29,6 +29,9 @@ TARGET_HAS_UDFPS := true
 TARGET_BOOT_ANIMATION_RES := 1080
 EXTRA_UDFPS_ANIMATIONS := true
 
+# Use Scudo instead of Jemalloc
+PRODUCT_USE_SCUDO := true
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="lynx-user 15 AP4A.241205.013 12621605 release-keys" \
     BuildFingerprint=google/lynx/lynx:15/AP4A.241205.013/12621605:user/release-keys \
